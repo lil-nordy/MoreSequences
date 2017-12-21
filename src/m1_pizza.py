@@ -620,9 +620,9 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
     ####################################################################
     # ------------------------------------------------------------------
     circle.attach_to(window)
-    points_list = generate_points_on_circle(number_of_lines)
+    points_list = generate_points_on_circle(circle, number_of_lines)
     for k in range(len(points_list)):
-        lines = rg.Line(points_list[k], points_list[k + hops_to_next_point])
+        lines = rg.Line(points_list[k], points_list[(k + hops_to_next_point) % (len(points_list))])
         lines.thickness = thickness
         lines.color = color
         lines.attach_to(window)
