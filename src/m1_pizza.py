@@ -396,6 +396,28 @@ def run_test_polygon():
 
 def polygon(window, circle, number_of_segments, color, thickness):
     """
+    Documentation:
+    this code: does the following: displayes the circle passed in, calls the generate_points_on_circle function to
+    attached a given number of points (equal to the number_of_segments value passed in).
+
+    # Todo 42: Ask what the documenation string hotkey is providing as the passins.
+    # Todo question: What is the python syntax for that
+    :param window:
+    :param circle:
+    :param number_of_segments:
+    :param color:
+    :param thickness:
+    :return:
+    """
+    """
+    :param window: 
+    :param circle: 
+    :param number_of_segments: 
+    :param color: 
+    :param thickness: 
+    :return: 
+    """
+    """
     What comes in:
       -- an rg.RoseWindow
       -- an rg.Circle
@@ -447,7 +469,7 @@ def polygon(window, circle, number_of_segments, color, thickness):
     circle.attach_to(window)
     points_list = generate_points_on_circle(circle, number_of_segments)
     for k in range(number_of_segments):
-        lines = rg.Line(points_list[k], points_list[(k + 1) % (number_of_segments)])
+        lines = rg.Line(points_list[k], points_list[(k + 1) % number_of_segments])
         lines.color = color
         lines.thickness = thickness
         lines.attach_to(window)
@@ -504,7 +526,7 @@ def run_test_fancy_polygon():
     #   For all these, filling the circles with one color and using
     #   a contrasting color for the lines makes them especially pretty.
     # ------------------------------------------------------------------
-    # Test 3 (on another window):
+    # Test 4 (on another window):
     title = 'Mutchler\'s picks'
     window = rg.RoseWindow(480, 350, title)
 
@@ -528,24 +550,33 @@ def run_test_fancy_polygon():
     fancy_polygon(window, circle, 300, 61, 'black', 5)
     window.close_on_mouse_click()
 
-    # Test 6 (on another window):
-    title = 'Nate\'s pick'
+    # Test 6
+    title = 'More Mutchler\'s picks'
     window = rg.RoseWindow(480, 350, title)
 
     circle = rg.Circle(rg.Point(240, 165), 150)
-    for k in range(500):
-        hops = math.sin(k)
-    fancy_polygon(window, circle, 500, hops, 'black', 5)
+    fancy_polygon(window, circle, 100, 31, 'black', 5)
+    circle.fill_color = 'yellow'
     window.close_on_mouse_click()
 
-    # Test 7 (on another window):
-    title = 'Nate\'s pick'
-    window = rg.RoseWindow(480, 350, title)
-
-    circle = rg.Circle(rg.Point(240, 165), 150)
-    hops = random.randrange(-5, 5, 1)
-    fancy_polygon(window, circle, 500, hops, 'black', 5)
-    window.close_on_mouse_click()
+    # # Test 6 (on another window):
+    # title = 'Nate\'s pick'
+    # window = rg.RoseWindow(480, 350, title)
+    #
+    # circle = rg.Circle(rg.Point(240, 165), 150)
+    # for k in range(500):
+    #     hops = math.sin(k) // 1
+    # fancy_polygon(window, circle, 500, hops, 'black', 5)
+    # window.close_on_mouse_click()
+    #
+    # # Test 7 (on another window):
+    # title = 'Nate\'s pick'
+    # window = rg.RoseWindow(480, 350, title)
+    #
+    # circle = rg.Circle(rg.Point(240, 165), 150)
+    # hops = random.randrange(-5, 5, 1)
+    # fancy_polygon(window, circle, 500, hops, 'black', 5)
+    # window.close_on_mouse_click()
 
 
 def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, thickness):
@@ -628,7 +659,11 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
         lines.attach_to(window)
     window.render()
 
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
 main()
+
+# TODO Final: check at least 3 other classmates' solutions to the implementations, read the PEP8 style guide,
+# lookup the official terminiology and syntax.
