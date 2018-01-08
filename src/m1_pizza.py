@@ -665,4 +665,4 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color, th
 # ----------------------------------------------------------------------
 main()
 
-# TODO Final: check at least 3 other classmates' solutions to the implementations, read the PEP8 style guide, and lookup the official terminiology and syntax.
+# TODO Final: check at least 3 other classmates' solutions to the implementations, read the PEP8 style guide, and lookup the official terminiology and syntax...
